@@ -2,16 +2,18 @@
     <title>The Diep State</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<nav role="navigation">
-    <ul>
-        <li class="sub-menu-parent"><a href="#">One</a></li>
-        <li><a href="#" aria-haspopup="true">Deux</a>
-            <ul class="dropdown sub-menu" area-label="submenu">
-                <li><a href="#">Sous-1</a></li>
-                <li><a href="#">Sous-2</a></li>
-                <li><a href="#">Sous-3</a></li>
-            </ul>   
-        </li>
-        <li><a href="#">Tres</a></li>
-    </ul>
-</nav>
+<body>
+    <nav role="navigation">
+        <ul class="main-menu menu-container">
+            <li class="menu-item"><a href="#">One</a></li>
+            <li class="sub-menu-parent menu-item"><a href="#" aria-haspopup="true">Deux</a>
+                <ul class="sub-menu menu-container" area-label="submenu">
+                    <li class="menu-item"><a href="#">Sous-1</a></li>
+                    <li class="menu-item"><a href="#">Sous-2</a></li>
+                    <li class="menu-item"><a href="#">Sous-3</a></li>
+                </ul>   
+            </li>
+            <li class="menu-item"><a href="#">Tres</a></li>
+        </ul>
+    </nav>
+</body>
