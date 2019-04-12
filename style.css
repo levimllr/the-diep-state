@@ -1,0 +1,78 @@
+/* JS-free, accessible drop-down menu. */
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    font-family: monospace;
+}
+
+ul {
+    background: darkslateblue;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: #fff;
+    background: darkslateblue;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+li a {
+    color: #fff;
+}
+
+/* The following styling isn't recommended,
+because it removes the styling of the blue outline focus ring.
+That said, the following stylings make sure that there still is
+some sort of focus styling in place. */
+li:focus-within a {
+    outline: none;
+}
+
+li:hover,
+li:focus-within,
+li:active {
+    background: slateblue;
+    cursor: pointer;
+}
+
+/* Access to the submenu!*/
+ul li ul {
+    background: slateblue;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.5s ease-in-out 0s, visibility 0s linear 0.5s, z-index 0s linear 0.05s;
+    display: none;
+}
+
+/* :focus-within gives us the secret sauce for accessible submenus.*/
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    display: block;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.5s, 0s;
+}
+
+ul li ul li {
+    clear: both;
+    width: 100%;
+}
